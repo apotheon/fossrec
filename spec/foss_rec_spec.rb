@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
+require 'minitest/spec'
 require '../lib/foss_rec'
 
 describe FossRec < MiniTest::Test do
