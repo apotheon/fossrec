@@ -17,7 +17,7 @@ class SpecHelper
 
   def file_missing? filepath, errmsg=nil
     if errmsg
-      File.exist?(filepath).must_equal false, "failed to init #{filepath}"
+      File.exist?(filepath).must_equal false, "file exists: #{filepath}"
     else
       File.exist?(filepath).must_equal false
     end
