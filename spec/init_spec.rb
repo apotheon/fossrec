@@ -27,6 +27,7 @@ describe Repository do
   it 'initializes a new, empty repository' do
     repo = Repository.init PROJECT, dir: helper.tmpdir
     File.exist?(PROJECT_PATH).must_equal true, "failed to init #{PROJECT_PATH}"
+    File.exist?(PROJECT_ALT).must_equal false, "failed to init #{PROJECT_ALT}"
   end
 
   it 'initializes a new, empty repository with alt filename extension' do
