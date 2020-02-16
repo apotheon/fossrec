@@ -27,4 +27,10 @@ describe Repository do
     repo = Repository.init PROJECT, dir: helper.tmpdir
     File.exist?(PROJECT_PATH).must_equal true, "failed to init #{PROJECT_PATH}"
   end
+
+  it 'initializes a new, empty repository with alt filename extension' do
+    project_path = File.join helper.tmpdir, PROJECT + '.ext'
+    repo = Repository.init PROJECT, dir: helper.tmpdir, ext: 'ext'
+    File.exist?(project_path).must_equal true, "failed to init #{project_path}"
+  end
 end
