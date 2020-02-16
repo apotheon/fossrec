@@ -11,7 +11,8 @@ describe Repository do
 
   EXT = 'fossil'
   PROJECT = 'project'
-  PROJECT_PATH = File.join helper.tmpdir, PROJECT
+  PROJECT_FILE = PROJECT + '.' + EXT
+  PROJECT_PATH = File.join helper.tmpdir, PROJECT_FILE
 
   before do
     helper.relocate
