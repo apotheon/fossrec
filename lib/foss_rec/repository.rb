@@ -6,6 +6,13 @@ class Repository
     @checkout_path = args[:checkout_path]
   end
 
+  def self.init project, args=Hash.new
+    dir = File.absolute_path args[:dir]
+    repofile = File.join dir, project
+
+    `fossil init #{repofile}`
+  end
+
   def checkout_path
     @checkout_path ||= get_element :repository
   end
