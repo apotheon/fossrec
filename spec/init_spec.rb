@@ -13,6 +13,7 @@ describe Repository do
   PROJECT = 'project'
   PROJECT_FILE = PROJECT + '.' + EXT
   PROJECT_PATH = File.join helper.tmpdir, PROJECT_FILE
+  PROJECT_ALT = File.join helper.tmpdir, PROJECT + '.ext'
 
   before do
     helper.relocate
@@ -29,8 +30,9 @@ describe Repository do
   end
 
   it 'initializes a new, empty repository with alt filename extension' do
-    project_path = File.join helper.tmpdir, PROJECT + '.ext'
+    project_path = 
     repo = Repository.init PROJECT, dir: helper.tmpdir, ext: 'ext'
-    File.exist?(project_path).must_equal true, "failed to init #{project_path}"
+    File.exist?(PROJECT_ALT).must_equal true, "failed to init #{PROJECT_ALT}"
+    File.exist?(PROJECT_PATH).must_equal false, "failed to init #{PROJECT_PATH}"
   end
 end
