@@ -8,7 +8,7 @@ class Repository
 
   def self.init project, args=Hash.new
     dir = File.absolute_path args[:dir]
-    repofile = File.join dir, project
+    repofile = File.join dir, project + '.' + 'fossil'
 
     `fossil init #{repofile}`
   end
