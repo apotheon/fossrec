@@ -9,9 +9,8 @@ require '../lib/foss_rec/repository'
 describe Repository do
   helper = SpecHelper.new __FILE__
 
-  EXT = 'fossil'
   PROJECT = 'project'
-  PROJECT_FILE = PROJECT + '.' + EXT
+  PROJECT_FILE = PROJECT + '.fossil'
   PROJECT_PATH = File.join helper.tmpdir, PROJECT_FILE
   PROJECT_ALT = File.join helper.tmpdir, PROJECT + '.ext'
 
