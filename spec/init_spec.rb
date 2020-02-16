@@ -10,8 +10,7 @@ describe Repository do
   helper = SpecHelper.new __FILE__
 
   PROJECT = 'project'
-  PROJECT_FILE = PROJECT + '.fossil'
-  PROJECT_PATH = File.join helper.tmpdir, PROJECT_FILE
+  PROJECT_PATH = File.join helper.tmpdir, PROJECT + '.fossil'
   PROJECT_ALT = File.join helper.tmpdir, PROJECT + '.ext'
 
   before do
