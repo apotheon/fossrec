@@ -1,8 +1,9 @@
 class Repository
   attr_reader :path, :checkout_path
-  def initialize path
-    @path = File.absolute_path path
-    @checkout_path = get_element :repository
+
+  def initialize args=Hash.new
+    @path = File.absolute_path args[:repo_path]
+    @checkout_path = args[:checkout_path]
   end
 
   def get_element key
