@@ -7,6 +7,22 @@ class SpecHelper
     @tmpdir = File.join local, tmp
   end
 
+  def file_exists? filepath, errmsg=nil
+    if errmsg
+      File.exist?(filepath).must_equal true, "failed to init #{filepath}"
+    else
+      File.exist?(filepath).must_equal true
+    end
+  end
+
+  def file_missing? filepath, errmsg=nil
+    if errmsg
+      File.exist?(filepath).must_equal false, "failed to init #{filepath}"
+    else
+      File.exist?(filepath).must_equal false
+    end
+  end
+
   def create_tmp
     Dir.mkdir tmp
   end
